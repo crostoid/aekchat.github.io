@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hakkında</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .kutu {
+            background-color: #007BFF;
+            color: white;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 8px 24px rgba(0, 123, 255, 0.6);
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        a {
+            color: white;
+            text-decoration: underline;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #000;
+            background-color: #fff;
+            border-radius: 4px;
+            padding: 2px 6px;
+            text-decoration: none;
+        }
+
+        h1,
+        p {
+            margin: 16px 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="kutu">
+        <h1>Hakkımda</h1>
+        <p>Merhaba, ben Ahmet. Web geliştirmeye yeni başladım ve bu benim ilk web projem.
+            Sürekli öğreniyor ve kendimi geliştiriyorum.</p>
+        <p>Bu sitede projelerimi, YouTube kanalımı ve iletişim bilgilerimi paylaşıyorum.</p>
+        <p>Daha fazla içerik için <a href="https://www.youtube.com/@crostoid23" target="_blank">YouTube kanalımı</a> ziyaret edebilirsin.</p>
+        <p>İletişim için <a href="mailto:ahmetemirkocaek@gmail.com">e-posta gönderebilirsin</a>.</p>
+        <p><a href="index.html">Anasayfaya dön</a></p>
+    </div>
+</body>
+
+</html>
