@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
     <style>
         body {
-            background-color: #000; /* Siyah arkaplan */
-            color: #fff; /* Yazılar beyaz */
+            background-color: #000;
+            color: #fff;
             font-family: 'Inter', sans-serif;
             height: 100vh;
             margin: 0;
@@ -18,8 +18,8 @@
         }
 
         .kutu {
-            background-color: #007BFF; /* Mavi kutu */
-            color: white; /* Kutunun içindeki yazılar beyaz */
+            background-color: #007BFF;
+            color: white;
             border-radius: 12px;
             padding: 40px;
             text-align: center;
@@ -39,8 +39,8 @@
 
         .linkler a {
             font-weight: bold;
-            color: white; /* Linkler beyaz */
-            background-color: rgba(255 255 255 / 0.15);
+            color: white;
+            background-color: rgba(255, 255, 255, 0.15);
             padding: 10px 18px;
             border-radius: 6px;
             text-decoration: none;
@@ -50,7 +50,6 @@
             animation: fadeInLink 0.8s ease-in-out forwards;
         }
 
-        /* Linklerin animasyon gecikmeleri */
         .linkler a:nth-child(1) {
             animation-delay: 0.3s;
         }
@@ -64,7 +63,7 @@
         }
 
         .linkler a:hover {
-            background-color: rgba(255 255 255 / 0.4);
+            background-color: rgba(255, 255, 255, 0.4);
             color: #000;
         }
 
@@ -73,7 +72,6 @@
             margin: 16px 0;
         }
 
-        /* Fade in animasyon */
         .fade-in {
             opacity: 0;
             animation: fadeIn 1.5s ease-in-out forwards;
@@ -102,6 +100,38 @@
                 transform: translateY(0);
             }
         }
+
+        /* Kayıt Formu */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
     </style>
 </head>
 
@@ -115,10 +145,18 @@
 
         <h1>Hoşgeldin</h1>
         <p>Merhaba ben Ahmet, bu benim ilk websitem. Gelişmeye devam edecek 🎉</p>
+
+        <!-- Kayıt Formu -->
+        <form action="#" method="post">
+            <input type="text" name="kullanici_adi" placeholder="Kullanıcı Adı" required />
+            <input type="password" name="sifre" placeholder="Şifre" required />
+            <button type="submit">Kayıt Ol</button>
+        </form>
     </div>
 </body>
 
 </html>
+
 
 
 
