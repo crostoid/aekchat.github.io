@@ -5,6 +5,7 @@
     <title>Anasayfa</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
     <style>
+        /* Senin CSS kodun buraya gelecek, aynen kopyala */
         body {
             background-color: #000; /* Siyah arkaplan */
             color: #fff; /* Yazılar beyaz */
@@ -14,6 +15,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
         }
 
         .kutu {
@@ -26,6 +28,7 @@
             max-width: 600px;
             box-shadow: 0 8px 24px rgba(0, 123, 255, 0.6);
             animation: fadeIn 1.5s ease-in-out forwards;
+            margin-bottom: 20px;
         }
 
         .linkler {
@@ -109,6 +112,54 @@
                 transform: translateY(0);
             }
         }
+
+        /* Chatbot input alanı */
+        #chat-section {
+            background: #007BFF;
+            color: white;
+            border-radius: 12px;
+            padding: 20px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 8px 24px rgba(0, 123, 255, 0.6);
+            font-family: 'Inter', sans-serif;
+        }
+
+        #chat-log {
+            height: 200px;
+            background: white;
+            color: black;
+            padding: 10px;
+            border-radius: 8px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        #chat-input {
+            width: 80%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            font-size: 14px;
+        }
+
+        #send-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #0056b3;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        #send-btn:hover {
+            background: #003d80;
+        }
+
     </style>
 </head>
 <body>
@@ -123,5 +174,58 @@
         <h1>Hoşgeldin</h1>
         <p>Merhaba ben Ahmet, bu benim ilk websitem. Gelişmeye devam edecek 🎉</p>
     </div>
-</body>
-</html>
+
+    <!-- Chatbot alanı -->
+    <div id="chat-section">
+        <div id="chat-log"></div>
+        <input type="text" id="chat-input" placeholder="Mesajınızı yazın..." autocomplete="off"/>
+        <button id="send-btn">Gönder</button>
+    </div>
+
+    <script>
+        const chatLog = document.getElementById("chat-log");
+        const chatInput = document.getElementById("chat-input");
+        const sendBtn = document.getElementById("send-btn");
+
+        // Kullanıcıdan isim alınması için prompt:
+        let isim = prompt("Merhaba! İsmini öğrenebilir miyim?");
+        if(!isim) isim = "Misafir";
+
+        // Başlangıç mesajı:
+        chatLog.innerHTML += `<div><b>AEKchat:</b> Merhaba ${isim}, seninle konuşmak çok güzel! Çıkmak için 'çık' yazabilirsin.</div>`;
+
+        // Mesaj gönderme fonksiyonu
+        function sendMessage() {
+            const userMessage = chatInput.value.trim();
+            if (!userMessage) return;
+
+            // Kullanıcı mesajını göster
+            chatLog.innerHTML += `<div><b>Sen:</b> ${userMessage}</div>`;
+
+            // Scroll sonuna indir
+            chatLog.scrollTop = chatLog.scrollHeight;
+
+            // Python backend'e POST isteği gönder
+            fetch('/chat', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({message: userMessage, name: isim})
+            })
+            .then(response => response.json())
+            .then(data => {
+                chatLog.innerHTML += `<div><b>AEKchat:</b> ${data.reply}</div>`;
+                chatLog.scrollTop = chatLog.scrollHeight;
+            });
+
+            chatInput.value = '';
+            chatInput.focus();
+        }
+
+        // Buton tıklama
+        sendBtn.addEventListener('click', sendMessage
+
+
+
+ChatGPT’ye sor
+
+Oluşturmaya devam et
